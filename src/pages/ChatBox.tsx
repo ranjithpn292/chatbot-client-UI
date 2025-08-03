@@ -39,9 +39,12 @@ export const ChatBox: React.FC = () => {
         ...newMessages,
         { text: <BouncingLoader />, isUser: false },
       ]);
-      const res = await axios.post("http://localhost:8080/api/chat", {
-        message: input,
-      });
+      const res = await axios.post(
+        "https://chatbot-client-backend-production.up.railway.app/api/chat",
+        {
+          message: input,
+        }
+      );
       const reply = res.data.reply;
       setMessages([...newMessages, { text: reply, isUser: false }]);
     } catch (err) {
