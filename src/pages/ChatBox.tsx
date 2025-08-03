@@ -23,8 +23,8 @@ export const ChatBox: React.FC = () => {
   };
 
   const handleKeyDown = (e: any) => {
-    console.log("ranjith::", e.key == "Enter");
-    if (e.key == "Enter") sendMessage();
+    console.log("ranjith::", e.key === "Enter");
+    if (e.key === "Enter") sendMessage();
   };
 
   const sendMessage = async () => {
